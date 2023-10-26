@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>COCOMO Calculator</title>
+</head>
+<body>
+    <div id="calculator">
+        <h2>COCOMO Calculator</h2>
+        <label for="kloc">Введите количество строк кода (KLOC):</label>
+        <input type="number" id="kloc" min="1" step="1" required>
+
+        <label for="projectType">Выберите тип проекта:</label>
+        <select id="projectType">
+            <option value="common">Распространенный</option>
+            <option value="semidetached">Полунезависимый</option>
+            <option value="embedded">Встроенный</option>
+        </select>
+        <div>
+        <h3>Факторы стоимости:</h3>
+            <label for="reliability">1) Требуемая надежность ПО:</label>
+            <select id="reliability">
+                <option value="1.40">Очень высокий</option>
+                <option value="1.15">Высокий</option>
+                <option value="1.00">Средний</option>
+                <option value="0.88">Низкий</option>
+                <option value="0.75">Очень низкий</option>
+                
+            </select>
+
+            <label for="dbSize">2) Размер БД приложения:</label>
+            <select id="dbSize">
+                <option value="1.16">Очень высокий</option>
+                <option value="1.08">Высокий</option>
+                <option value="1.00">Средний</option> 
+                <option value="0.94">Низкий</option>
+                
+            </select>
+            
+            <label for="productComplexity">3) Сложность продукта:</label>
+            <select id="productComplexity">
+                <option value="1.65">Критический</option>
+                <option value="1.30">Очень высокий</option>
+                <option value="1.15">Высокий</option>
+                <option value="1.00">Средний</option>
+                <option value="0.85">Низкий</option>
+                <option value="0.70">Очень низкий</option>
+            </select>
+
+            <label for="performanceConstraints">4) Ограничения быстродействия при выполнении программы:</label>
+            <select id="performanceConstraints">
+                <option value="1.66">Критический</option>
+                <option value="1.30">Очень высокий</option>
+                <option value="1.11">Высокий</option>
+                <option value="1.00">Средний</option>
+            </select>
+
+            <label for="memoryConstraints">5) Ограничения памяти:</label>
+            <select id="memoryConstraints">
+                <option value="1.56">Критический</option>
+                <option value="1.21">Очень высокий</option>
+                <option value="1.06">Высокий</option>
+                <option value="1.00">Средний</option>
+            </select>
+
+            <label for="vmInstability">6) Неустойчивость окружения виртуальной машины:</label>
+            <select id="vmInstability">
+                <option value="1.30">Очень высокий</option>
+                <option value="1.15">Высокий</option>
+                <option value="1.00">Средний</option>
+                <option value="0.87">Низкий</option>
+            </select>
+
+            <label for="recoveryTime">7) Требуемое время восстановления:</label>
+            <select id="recoveryTime">
+                <option value="1.15">Очень высокий</option>
+                <option value="1.07">Высокий</option>
+                <option value="1.00">Средний</option>
+                <option value="0.87">Низкий</option>
+            </select>
+
+            <label for="analyticalAbilities">8) Аналитические способности:</label>
+            <select id="analyticalAbilities">
+                <option value="0.71">Очень высокий</option>
+                <option value="0.86">Высокий</option>
+                <option value="1.00">Средний</option>
+                <option value="1.19">Низкий</option>
+                <option value="1.46">Очень низкий</option>
+            </select>
+
+            <label for="developmentExperience">9) Опыт разработки:</label>
+            <select id="developmentExperience">
+                <option value="0.82">Очень высокий</option>
+                <option value="0.91">Высокий</option>
+                <option value="1.00">Средний</option>
+                <option value="1.13">Низкий</option>
+                <option value="1.29">Очень низкий</option>
+            </select>
+
+            <label for="softwareDevelopmentSkills">10) Способности к разработке ПО:</label>
+            <select id="softwareDevelopmentSkills">
+                <option value="0.70">Очень высокий</option>
+                <option value="0.86">Высокий</option>
+                <option value="1.00">Средний</option>
+                <option value="1.17">Низкий</option>
+                <option value="1.42">Очень низкий</option>
+            </select>
+
+            <label for="vmUsageExperience">11) Опыт использования виртуальных машин:</label>
+            <select id="vmUsageExperience">
+                <option value="0.90">Высокий</option>
+                <option value="1.00">Средний</option>
+                <option value="1.10">Низкий</option>
+                <option value="1.21">Очень низкий</option>
+            </select>
+
+            <label for="programmingExperience">12) Опыт разработки на языках программирования:</label>
+            <select id="programmingExperience">
+                <option value="0.95">Высокий</option>
+                <option value="1.00">Средний</option>
+                <option value="1.07">Низкий</option>
+                <option value="1.14">Очень низкий</option>
+            </select>
+
+            <label for="softwareDevelopmentMethods">13) Применение методов разработки ПО:</label>
+            <select id="softwareDevelopmentMethods">
+                <option value="0.82">Очень высокий</option>
+                <option value="0.91">Высокий</option>
+                <option value="1.00">Средний</option>
+                <option value="1.10">Низкий</option>
+                <option value="1.24">Очень низкий</option>
+            </select>
+
+            <label for="developmentToolsUsage">14) Использование инструментария разработки ПО:</label>
+            <select id="developmentToolsUsage">
+                <option value="0.83">Очень высокий</option>
+                <option value="0.91">Высокий</option>
+                <option value="1.00">Средний</option>
+                <option value="1.10">Низкий</option>
+                <option value="1.24">Очень низкий</option>
+            </select>
+
+            <label for="scheduleRequirements">15) Требования соблюдения графика разработки:</label>
+            <select id="scheduleRequirements">
+                <option value="1.10">Высокий</option>
+                <option value="1.04">Средний</option>
+                <option value="1.00">Средний</option>
+                <option value="1.08">Низкий</option>
+                <option value="1.23">Очень низкий</option>
+            </select>
+        </div>
+    <div id="results">
+            <button onclick="calculateCOCOMO()">Рассчитать</button>
+                <h3>Результаты:</h3>
+                <p>Затраты в человеко-месяцах (E): <span id="effortResult"></span></p>
+                <p>Время разработки (D): <span id="durationResult"></span> месяцев</p>
+    </div>
+
+    
+    <script src="cocomo.js"></script>
+
+</body>
+</html>
